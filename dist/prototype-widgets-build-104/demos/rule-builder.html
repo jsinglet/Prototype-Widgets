@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>
+			Rule Builder Demo - Prototype Widgets
+		</title>
+		<link href="base.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="prototype/prototype.js"></script>
+		<script type="text/javascript" src="prototype/scriptaculous.js"></script>
+		<script type="text/javascript" src="prototype/builder.js"></script>
+		<script type="text/javascript" src="prototype/effects.js"></script>
+		<script type="text/javascript" src="prototype/slider.js"></script>
+		<script type="text/javascript" src="prototype/dragdrop.js"></script>
+		
+		
+		<script type="text/javascript" src="../prototype-widgets.js"></script>
+		<link href="../prototype-widgets.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div align="center" style="width: 800px; margin-left:auto; margin-right:auto;">
+			<div align="left" style="margin-bottom:50px">
+				<h1>
+					Rule Builder Demo
+				</h1>
+			</div>
+			
+			<div align="left" style="margin-bottom:50px">
+				<h2>
+					Simple Rule Builder
+				</h2>
+			</div>
+			
+			
+			<textarea id="rb1-output" style="width: 800px; height: 100px;"></textarea>
+			<div style="margin-bottom:50px">
+			<input type="button" value="Save State" onclick="rb.save('rb1-output')">
+			</div>
+
+				<div id="rb">
+					You need to enable javascript!
+				</div>
+			
+			
+			<script type="text/javascript">
+					var rb = new PrototypeWidgets.RuleBuilder('rb', {ruleConfig: 
+						[
+						{option: 'Unicorn Color', options: ['Equals', 'Does Not Equal', 'Is Like']}, 
+						{option: 'Average Speed', options: ['Equals', 'Does Not Equal', 'Is Like']}
+						]});
+							rb.render();
+			</script>
+	
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

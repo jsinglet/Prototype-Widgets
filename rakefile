@@ -1,0 +1,52 @@
+require 'rake/clean'
+require 'fileutils'
+
+CLEAN.include("dist")
+
+task :tests do 
+#  Dir.glob("tests/*.rb").each do |file|
+#    puts "Running Unit Test #{file}..."
+#  end
+end
+
+task :build => [:tests] do 
+  #find the current version number and increment it
+  version = IO.readlines("build.version")[0]
+  version = version.to_i + 1
+  
+  puts "Building Version #{version}"
+  
+  f = File.new("build.version", "w")
+  f.write(version)
+  f.close
+  
+  #setup the build directory
+  if !File.exists?('dist')
+    puts "Creating build output directory..."
+    sh %{mkdir dist}
+  else
+    puts "Build output directory already exists... Consider running the \"clean\" task."
+  end
+  
+  ## create a tar of this of the form coregmedia-build-#.tar.gz
+  ## include just the core script and the version file
+  build_name = "prototype-widgets-build-#{version}" 
+  build_dir = "dist/#{build_name}"
+  
+  sh %{mkdir #{build_dir}}
+  sh %{cp -r images demos prototype-widgets*  #{build_dir}}
+  
+  sh %{cp build.version #{build_dir}}
+  
+  sh %{tar -C dist/ -cvf dist/#{build_name}.tar #{build_name} }
+  sh %{gzip #{build_dir}.tar }
+  
+  puts "Sucessfully Built Target [#{build_name}.tar.gz]"
+end
+
+
+
+task :default => ["build"] do
+  
+end
+

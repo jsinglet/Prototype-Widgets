@@ -1,0 +1,126 @@
+@charset
+"UTF-8"
+;
+/* CSS Document - t */
+
+
+.pw-passwordChecker {
+    background: url(images/password-strength.png) no-repeat top left;
+    width: 180px;
+    height: 21px;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.pw-passwordChecker.check-medium {
+    background-position: 0 0;
+    width: 180px;
+    height: 21px;
+    color: #d5ca00;
+}
+
+.pw-passwordChecker.check-strong {
+    background-position: 0 -71px;
+    width: 180px;
+    height: 21px;
+    color: #00a651;
+}
+
+.pw-passwordChecker.check-very-strong {
+    background-position: 0 -142px;
+    width: 180px;
+    height: 21px;
+    color: #00a651;
+}
+
+.pw-passwordChecker.check-very-weak {
+    background-position: 0 -213px;
+    width: 180px;
+    height: 21px;
+    color: #000;
+}
+
+.pw-passwordChecker.check-weak {
+    background-position: 0 -284px;
+    width: 180px;
+    height: 21px;
+    color: #c42026;
+}
+
+.pw-rule-builder {
+    display: inline-table; /*padding: 10px;*/
+    text-align: left;
+    font-size: 11px;
+}
+
+.pw-rule-group {
+    border: 1px solid #eee; /*padding: 10px;*/
+    margin-bottom: 20px;
+}
+
+.pw-rule-group .rule-group-footer {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.pw-rule-group .rules {
+    border-top: 1px solid #8E8E8E;
+    border-left: 1px solid #bebebe;
+    border-bottom: 1px solid #8E8E8E;
+    border-right: 1px solid #bebebe;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 8px;
+
+
+
+  -moz-box-shadow: 0 0 5px #888888;
+  -webkit-box-shadow: 0 0 5px #888888;
+    
+}
+
+.pw-rule-group .rules .rule-condition {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pw-rule-group .rules .rule-condition .rule-metric {
+    font-weight: bold;
+    display: inline-block;
+    text-shadow: #fff 1px 1px 0;
+    width: 125px
+}
+
+.pw-rule-group .rules .even {
+
+    background-color: #FFF;
+}
+
+.pw-rule-group .rules .odd {
+    background-color: #F2F9FF
+}
+
+.pw-rule-group .rules .rule-condition input {
+    font-size: 15px;
+    border: 2px solid #eee;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-family: ratio, Arial, sans-serif;
+    margin: 0;
+
+
+}
+
+.pw-rule-group .rules .rule-condition input[type="text"] {
+    width: 200px;
+    margin: 0;
+        
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 4px;
+
+}
