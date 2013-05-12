@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PrototypeWidgets by jsinglet</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/jsinglet/prototype-widgets">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/jsinglet/prototype-widgets/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/jsinglet/prototype-widgets/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>PrototypeWidgets</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/jsinglet">jsinglet</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Prototype Widgets</h1>
+
+<p>Prototype Widgets (PW) is a series of high-quality, purpose-built, and otherwise hyphenated components for the Prototype Javascript library. Its aim is to create a library of widgets for use by all without having to resort to other frameworks like EXT or YUI which are generally much too heavyweight for most requirements.</p>
+
+<p>PW will continue to grow with cool new custom widgets, but for its initial release the two components included in PW are:</p>
+
+<ul>
+<li>A password strength checker -- a cool graphical representation of the strength of a password</li>
+<li>A "rule builder" that allows you to chain together complex logic to build rules ala something like a mail filter, firewalls rules... whatever you like. </li>
+</ul><h1>Getting Started</h1>
+
+<p>If you've even used Prototype the following process should be fairly easy.</p>
+
+<ul>
+<li>Download and unpack Prototype, 1.6.1 or higher. </li>
+<li>Download a current release of PW. Note that PW uses build numbers not version numbers. The higher the build number, the fresher the build. </li>
+</ul><p>In the <code>&lt;head&gt;</code> of your document, place the following. </p>
+
+<div class="highlight"><pre><span class="nt">&lt;head&gt;</span>
+     <span class="c">&lt;!-- insert your prototype library here --&gt;</span>
+     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"prototype/prototype.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+     <span class="c">&lt;!-- prototype-widgets --&gt;</span>
+     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"prototype-widgets.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+     <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"prototype-widgets.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+<p>That's it, you are ready to rock and roll. </p>
+
+<h1>Using The Widgets</h1>
+
+<p>Using the widgets is a fairly trivial matter as well. For a complete demonstration of the widgets, see the "demos" folder in the distribution. </p>
+
+<hr><h1>PrototypeWidgets.PasswordStrengthChecker</h1>
+
+<p>A "levels style" widget that checks the strength of the text in a given field and displays the result. </p>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre>     PrototypeWidgets.PasswordStrengthChecker(
+          element_id_or_reference, 
+          {defaultStrength:level} //strength is 0, (weakest) thru 4 (strongest)
+     ); 
+</pre></div>
+
+<p><em><em>Note that you can pass in either a string id for the element to watch or an actual reference to that element.</em></em></p>
+
+<h2>Example</h2>
+
+<div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+     <span class="k">new</span> <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">PasswordStrengthChecker</span><span class="p">(</span><span class="s1">'password'</span><span class="p">,</span> <span class="p">{</span><span class="nx">defaultStrength</span><span class="o">:</span><span class="mi">0</span><span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>Or</p>
+
+<div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+     <span class="k">new</span> <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">PasswordStrengthChecker</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'password'</span><span class="p">),</span> <span class="p">{</span><span class="nx">defaultStrength</span><span class="o">:</span><span class="mi">0</span><span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>This produces a Field Like this: </p>
+
+<p>[<a href="http://www.the-singleton.com/wp-content/uploads/2011/09/Screen-Shot-2011-09-18-at-8.48.31-PM.png">http://www.the-singleton.com/wp-content/uploads/2011/09/Screen-Shot-2011-09-18-at-8.48.31-PM.png</a>]</p>
+
+<hr><h1>PrototypeWidgets.RuleBuilder</h1>
+
+<p>A rule builder widget that can save and restore its state. </p>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre>     PrototypeWidgets.RuleBuilder(element_id_or_reference, {ruleConfig: ruleOptionsAndValues});
+
+</pre></div>
+
+<h3>Available Methods</h3>
+
+<div class="highlight"><pre>     <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">RuleBuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">()</span> <span class="c1">// renders the rule builder to the specified element_id</span>
+     <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">RuleBuilder</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>    <span class="c1">// returns a JSON array representing the current state</span>
+     <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">RuleBuilder</span><span class="p">.</span><span class="nx">renderWith</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="c1">//renders the given JSON into the rule builder</span>
+</pre></div>
+
+<h2>Example</h2>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"rb"</span><span class="nt">&gt;</span>You need to enable javascript!<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+     <span class="kd">var</span> <span class="nx">rb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">RuleBuilder</span><span class="p">(</span><span class="s1">'rb'</span><span class="p">,</span> <span class="p">{</span><span class="nx">ruleConfig</span><span class="o">:</span> 
+     <span class="p">[</span>
+      <span class="p">{</span><span class="nx">option</span><span class="o">:</span> <span class="s1">'Unicorn Color'</span><span class="p">,</span> <span class="nx">options</span><span class="o">:</span> <span class="p">[</span><span class="s1">'Equals'</span><span class="p">,</span> <span class="s1">'Does Not Equal'</span><span class="p">,</span> <span class="s1">'Is Like'</span><span class="p">]},</span> 
+      <span class="p">{</span><span class="nx">option</span><span class="o">:</span> <span class="s1">'Average Speed'</span><span class="p">,</span> <span class="nx">options</span><span class="o">:</span> <span class="p">[</span><span class="s1">'Equals'</span><span class="p">,</span> <span class="s1">'Does Not Equal'</span><span class="p">,</span> <span class="s1">'Is Like'</span><span class="p">]}</span>
+     <span class="p">]});</span>
+
+     <span class="nx">rb</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>Restoring State</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"rb"</span><span class="nt">&gt;</span>You need to enable javascript!<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+     <span class="kd">var</span> <span class="nx">rb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PrototypeWidgets</span><span class="p">.</span><span class="nx">RuleBuilder</span><span class="p">(</span><span class="s1">'rb'</span><span class="p">,</span> <span class="p">{</span><span class="nx">ruleConfig</span><span class="o">:</span> 
+     <span class="p">[</span>
+      <span class="p">{</span><span class="nx">option</span><span class="o">:</span> <span class="s1">'Unicorn Color'</span><span class="p">,</span> <span class="nx">options</span><span class="o">:</span> <span class="p">[</span><span class="s1">'Equals'</span><span class="p">,</span> <span class="s1">'Does Not Equal'</span><span class="p">,</span> <span class="s1">'Is Like'</span><span class="p">]},</span> 
+      <span class="p">{</span><span class="nx">option</span><span class="o">:</span> <span class="s1">'Average Speed'</span><span class="p">,</span> <span class="nx">options</span><span class="o">:</span> <span class="p">[</span><span class="s1">'Equals'</span><span class="p">,</span> <span class="s1">'Does Not Equal'</span><span class="p">,</span> <span class="s1">'Is Like'</span><span class="p">]}</span>
+     <span class="p">]});</span>
+
+     <span class="nx">rb</span><span class="p">.</span><span class="nx">renderWith</span><span class="p">([{</span><span class="s2">"ruleGroupMode"</span><span class="o">:</span> <span class="s2">"first"</span><span class="p">,</span> <span class="s2">"evaluationMode"</span><span class="o">:</span> <span class="s2">"any"</span><span class="p">,</span> <span class="s2">"rules"</span><span class="o">:</span> <span class="p">[{</span><span class="s2">"condition"</span><span class="o">:</span> <span class="s2">"Unicorn Color Equals"</span><span class="p">,</span> <span class="s2">"value"</span><span class="o">:</span> <span class="s2">"red"</span><span class="p">},</span> <span class="p">{</span><span class="s2">"condition"</span><span class="o">:</span> <span class="s2">"Unicorn Color Equals"</span><span class="p">,</span> <span class="s2">"value"</span><span class="o">:</span> <span class="s2">"blue"</span><span class="p">}]},</span> <span class="p">{</span><span class="s2">"ruleGroupMode"</span><span class="o">:</span> <span class="s2">"and"</span><span class="p">,</span> <span class="s2">"evaluationMode"</span><span class="o">:</span> <span class="s2">"all"</span><span class="p">,</span> <span class="s2">"rules"</span><span class="o">:</span> <span class="p">[{</span><span class="s2">"condition"</span><span class="o">:</span> <span class="s2">"Average Speed Equals"</span><span class="p">,</span> <span class="s2">"value"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">}]}]);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>Example: </p>
+
+<p>[<a href="http://www.the-singleton.com/wp-content/uploads/2011/09/Screen-Shot-2011-09-18-at-8.58.21-PM.png">http://www.the-singleton.com/wp-content/uploads/2011/09/Screen-Shot-2011-09-18-at-8.58.21-PM.png</a>]</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
